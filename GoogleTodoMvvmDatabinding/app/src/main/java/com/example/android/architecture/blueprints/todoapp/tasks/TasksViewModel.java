@@ -63,17 +63,15 @@ public class TasksViewModel extends BaseObservable {
 
     private TasksFilterType mCurrentFiltering = TasksFilterType.ALL_TASKS;
 
-    private final TasksRepository mTasksRepository;
-
     private final ObservableBoolean mIsDataLoadingError = new ObservableBoolean(false);
 
     private Context mContext; // To avoid leaks, this must be an Application Context.
 
+    private final TasksRepository mTasksRepository;
+
     private TasksNavigator mNavigator;
 
-    public TasksViewModel(
-            TasksRepository repository,
-            Context context) {
+    public TasksViewModel(TasksRepository repository, Context context) {
         mContext = context.getApplicationContext(); // Force use of Application Context.
         mTasksRepository = repository;
 
